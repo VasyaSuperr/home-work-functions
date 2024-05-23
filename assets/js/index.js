@@ -111,3 +111,73 @@ console.log(
   `Число ${numberForCheckIsPrime} є простим :>> `,
   isPrimeNumber(numberForCheckIsPrime)
 );
+
+console.log("Завдання 6");
+console.log("Зображено на сторінці");
+
+/**
+ * @function productCard
+ * @param {string} imgAddress - Product photo
+ * @param {string} productName - Product name
+ * @param {string} description - Product description
+ * @param {number} price - Product price
+ * @param {number} discountedPrice - Product discounted price
+ */
+function productCard(
+  imgAddress,
+  productName,
+  description,
+  price,
+  discountedPrice
+) {
+  let classPriceText = "";
+  let discount = null;
+  let discountedPriceText = "";
+
+  if (discountedPrice !== undefined) {
+    classPriceText = "class='product-price'";
+    discount = ((price - discountedPrice) / price) * 100;
+    discountedPriceText = `
+    <p class="product-discounted-price">${discountedPrice} грн. </p>
+    <p class="product-discounted-price">Знижка - ${Math.round(discount)}%</p>`;
+  } else {
+    classPriceText = "";
+  }
+
+  document.write(`
+  <div class="retreats">
+    <article class="product-card">
+      <img class="product-photo" src="${imgAddress}" alt="Product photo" />
+      <h3 class="product-name">${productName}</h3>
+      <p class="product-description">${description}</p>
+      <div class="div-product-price">
+      <p ${classPriceText}>${price} грн.</p>
+      ${discountedPriceText}
+      </div>
+    </article>
+  </div>
+  `);
+}
+
+const photoProduct = prompt(
+  "Вставте адресу фотографії ",
+  "https://cdn-icons-png.flaticon.com/512/1170/1170679.png"
+);
+const nameProduct = prompt("Введіть назву товару", "Lorem Ispum");
+const descriptionProduct = prompt(
+  "Введіть опис товару",
+  "Lorem lipsum dolor sit amet, consectetuer odipiscing elit, sed diam nonummy nibh euismod tincidunt ut"
+);
+const priceProduct = +prompt("Введіть ціну товару", "1500");
+const discountedPriceProduct = +prompt(
+  "Введіть ціну товару після знижки",
+  "1100"
+);
+
+productCard(
+  photoProduct,
+  nameProduct,
+  descriptionProduct,
+  priceProduct,
+  discountedPriceProduct
+);

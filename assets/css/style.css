@@ -1,0 +1,53 @@
+body {
+  background-color: orange;
+  font-size: 18px;
+}
+
+.retreats {
+  padding: 1.5rem;
+}
+
+.product-card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 350px;
+  flex-basis: 300px;
+  min-width: 250px;
+  padding: 20px;
+}
+
+.product-photo {
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.product-name {
+  font-size: 32px;
+  font-weight: bolder;
+}
+
+.product-description {
+  padding: 20px 0;
+  line-height: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.div-product-price {
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+  letter-spacing: 3px;
+  font-weight: bolder;
+}
+
+.product-price {
+  text-decoration: line-through;
+  font-size: 12px;
+}
+
+.product-discounted-price {
+  color: red;
+  font-size: 32px;
+}
