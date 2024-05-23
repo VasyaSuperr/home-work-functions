@@ -54,7 +54,7 @@ console.log(
 console.log("Завдання 4");
 /**
  * @function calculateSquareArea
- * @param {number} side - Lenghtof the side of the square
+ * @param {number} side - Lenght of the side of the square
  * @returns {number} Square area
  */
 function calculateSquareArea(side) {
@@ -64,5 +64,26 @@ function calculateSquareArea(side) {
 const sideSquare = 20;
 console.log(
   `Площа квадрата: 
-  V = ${sideSquare} * ${sideSquare} = ${calculateSquareArea(sideSquare)}`
+V = ${sideSquare} * ${sideSquare} = ${calculateSquareArea(sideSquare)}`
+);
+
+/**
+ * @function calculateRectangleArea
+ * @param {number} width - Lenght of the first side of the rectangle
+ * @param {number} lenght - Lenght of the second side of the rectangle
+ * @returns {number} Rectangle area
+ */
+function calculateRectangleArea(width, lenght) {
+  return width * lenght;
+}
+
+const widthRectangle = 5;
+const lenghtRectangle = 10;
+
+console.log(
+  `Площа прямокутника: 
+V = ${widthRectangle} * ${lenghtRectangle} = ${calculateRectangleArea(
+    widthRectangle,
+    lenghtRectangle
+  )}`
 );
