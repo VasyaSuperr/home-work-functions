@@ -63,7 +63,7 @@ function calculateSquareArea(side) {
 
 const sideSquare = 20;
 console.log(
-  `Площа квадрата :>> V = ${sideSquare} * ${sideSquare} = `,
+  `Площа квадрата :>> S = ${sideSquare} * ${sideSquare} = `,
   calculateSquareArea(sideSquare)
 );
 
@@ -81,7 +81,7 @@ const widthRectangle = 5;
 const lenghtRectangle = 10;
 
 console.log(
-  `Площа прямокутника :>> V = ${widthRectangle} * ${lenghtRectangle} = `,
+  `Площа прямокутника :>> S = ${widthRectangle} * ${lenghtRectangle} = `,
   calculateRectangleArea(widthRectangle, lenghtRectangle)
 );
 
@@ -112,72 +112,112 @@ console.log(
   isPrimeNumber(numberForCheckIsPrime)
 );
 
-console.log("Завдання 6");
-console.log("Зображено на сторінці");
+// console.log("Завдання 6");
+// console.log("Зображено на сторінці");
+
+// /**
+//  * @function productCard
+//  * @param {string} imgAddress - Product photo
+//  * @param {string} productName - Product name
+//  * @param {string} description - Product description
+//  * @param {number} price - Product price
+//  * @param {number} discountedPrice - Product discounted price
+//  */
+// function productCard(
+//   imgAddress,
+//   productName,
+//   description,
+//   price,
+//   discountedPrice
+// ) {
+//   let classPriceText = "";
+//   let discount = null;
+//   let discountedPriceText = "";
+
+//   if (discountedPrice !== undefined) {
+//     classPriceText = "class='product-price'";
+//     discount = ((price - discountedPrice) / price) * 100;
+//     discountedPriceText = `
+//     <p class="product-discounted-price">${discountedPrice} грн. </p>
+//     <p class="product-discounted-price">Знижка - ${Math.round(discount)}%</p>`;
+//   } else {
+//     classPriceText = "";
+//   }
+
+//   document.write(`
+//   <div class="retreats">
+//     <article class="product-card">
+//       <img class="product-photo" src="${imgAddress}" alt="Product photo" />
+//       <h3 class="product-name">${productName}</h3>
+//       <p class="product-description">${description}</p>
+//       <div class="div-product-price">
+//       <p ${classPriceText}>${price} грн.</p>
+//       ${discountedPriceText}
+//       </div>
+//     </article>
+//   </div>
+//   `);
+// }
+
+// const photoProduct = prompt(
+//   "Вставте адресу фотографії ",
+//   "https://cdn-icons-png.flaticon.com/512/1170/1170679.png"
+// );
+// const nameProduct = prompt("Введіть назву товару", "Lorem Ispum");
+// const descriptionProduct = prompt(
+//   "Введіть опис товару",
+//   "Lorem lipsum dolor sit amet, consectetuer odipiscing elit, sed diam nonummy nibh euismod tincidunt ut"
+// );
+// const priceProduct = +prompt("Введіть ціну товару", "1500");
+// const discountedPriceProduct = +prompt(
+//   "Введіть ціну товару після знижки",
+//   "1100"
+// );
+
+// productCard(
+//   photoProduct,
+//   nameProduct,
+//   descriptionProduct,
+//   priceProduct,
+//   discountedPriceProduct
+// );
+
+console.log("Завдання 7");
+console.log("Function expression");
+/**
+ * @function calculateTriangleArea
+ * @param {number} a - a - side a triangle
+ * @param {number} b - b - side a triangle
+ * @param {number} c - c - side a triangle
+ * @returns {number} Triangle area
+ */
+const calculateTriangleArea = function (a, b, c) {
+  const s = (a + b + c) / 2;
+  return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+};
+
+const sideATriangle = 3;
+const sideBTriangle = 6;
+const sideCTriangle = 5;
+
+console.log(
+  `Площа трикутника (формула Герона) :>> S = `,
+  calculateTriangleArea(sideATriangle, sideBTriangle, sideCTriangle)
+);
 
 /**
- * @function productCard
- * @param {string} imgAddress - Product photo
- * @param {string} productName - Product name
- * @param {string} description - Product description
- * @param {number} price - Product price
- * @param {number} discountedPrice - Product discounted price
+ * @function calculateConeArea
+ * @param {number} r - Radius
+ * @param {number} h - Height
+ * @returns {number} Cone area
  */
-function productCard(
-  imgAddress,
-  productName,
-  description,
-  price,
-  discountedPrice
-) {
-  let classPriceText = "";
-  let discount = null;
-  let discountedPriceText = "";
+const calculateConeArea = function (r, h) {
+  const l = Math.sqrt(r * r + h * h);
 
-  if (discountedPrice !== undefined) {
-    classPriceText = "class='product-price'";
-    discount = ((price - discountedPrice) / price) * 100;
-    discountedPriceText = `
-    <p class="product-discounted-price">${discountedPrice} грн. </p>
-    <p class="product-discounted-price">Знижка - ${Math.round(discount)}%</p>`;
-  } else {
-    classPriceText = "";
-  }
+  return Math.PI * r * (r + l);
+};
 
-  document.write(`
-  <div class="retreats">
-    <article class="product-card">
-      <img class="product-photo" src="${imgAddress}" alt="Product photo" />
-      <h3 class="product-name">${productName}</h3>
-      <p class="product-description">${description}</p>
-      <div class="div-product-price">
-      <p ${classPriceText}>${price} грн.</p>
-      ${discountedPriceText}
-      </div>
-    </article>
-  </div>
-  `);
-}
+const radiusCone = 3;
+const heightCone = 4;
 
-const photoProduct = prompt(
-  "Вставте адресу фотографії ",
-  "https://cdn-icons-png.flaticon.com/512/1170/1170679.png"
-);
-const nameProduct = prompt("Введіть назву товару", "Lorem Ispum");
-const descriptionProduct = prompt(
-  "Введіть опис товару",
-  "Lorem lipsum dolor sit amet, consectetuer odipiscing elit, sed diam nonummy nibh euismod tincidunt ut"
-);
-const priceProduct = +prompt("Введіть ціну товару", "1500");
-const discountedPriceProduct = +prompt(
-  "Введіть ціну товару після знижки",
-  "1100"
-);
-
-productCard(
-  photoProduct,
-  nameProduct,
-  descriptionProduct,
-  priceProduct,
-  discountedPriceProduct
-);
+console.log(`Площа конуса :>> S = `, calculateConeArea(radiusCone, heightCone));
