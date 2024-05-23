@@ -63,8 +63,8 @@ function calculateSquareArea(side) {
 
 const sideSquare = 20;
 console.log(
-  `Площа квадрата: 
-V = ${sideSquare} * ${sideSquare} = ${calculateSquareArea(sideSquare)}`
+  `Площа квадрата :>> V = ${sideSquare} * ${sideSquare} = `,
+  calculateSquareArea(sideSquare)
 );
 
 /**
@@ -81,9 +81,33 @@ const widthRectangle = 5;
 const lenghtRectangle = 10;
 
 console.log(
-  `Площа прямокутника: 
-V = ${widthRectangle} * ${lenghtRectangle} = ${calculateRectangleArea(
-    widthRectangle,
-    lenghtRectangle
-  )}`
+  `Площа прямокутника :>> V = ${widthRectangle} * ${lenghtRectangle} = `,
+  calculateRectangleArea(widthRectangle, lenghtRectangle)
+);
+
+console.log("Завдання 5");
+
+function isPrimeNumber(someNumber) {
+  if (someNumber < 2) {
+    return false;
+  }
+
+  if (someNumber % 2 === 0 || someNumber % 3 === 0) {
+    return false;
+  }
+
+  for (let i = 5; i * i <= someNumber; i += 6) {
+    if (someNumber % i === 0 || someNumber % (i + 2) === 0) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+const numberForCheckIsPrime = 105;
+
+console.log(
+  `Число ${numberForCheckIsPrime} є простим :>> `,
+  isPrimeNumber(numberForCheckIsPrime)
 );
