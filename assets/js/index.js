@@ -1,5 +1,4 @@
 console.log("Завдання 1");
-
 /**
  * @function isWorkingAgePerson
  * @param {number} agePeson - Age of a person
@@ -13,7 +12,6 @@ const age = 88;
 console.log(`Вік в ${age} роки працездатний :>> `, isWorkingAgePerson(age));
 
 console.log("Завдання 2");
-
 /**
  * @function checkMultiplicity
  * @param {number} a - A number that is divided into a whole
@@ -35,22 +33,36 @@ console.log(
 console.log("Завдання 3");
 /**
  * @function isThereTriangle
- * @param {number} AB - side AB a triangle
- * @param {number} BC - side BC a triangle
- * @param {number} AC - side AC a triangle
+ * @param {number} a - a - side a triangle
+ * @param {number} b - b - side a triangle
+ * @param {number} c - c - side a triangle
  * @returns {boolean} A boolean value that indicates whether a triangle exists or not
  */
-function isThereTriangle(AB, BC, AC) {
-  return (
-    AB > 0 && BC > 0 && AC > 0 && AB + BC > AC && AB + AC > BC && AC + BC > AB
-  );
+function isThereTriangle(a, b, c) {
+  return a > 0 && b > 0 && c > 0 && a + b > c && a + c > b && b + c > a;
 }
 
-const sideAB = 3;
-const sideBC = 6;
-const sideAC = 5;
+const sideA = 3;
+const sideB = 6;
+const sideC = 5;
 
 console.log(
-  `Існує трикутник з такими сторонами ${sideAB}, ${sideBC}, ${sideAC} :>> `,
-  isThereTriangle(sideAB, sideBC, sideAC)
+  `Існує трикутник з такими сторонами ${sideA}, ${sideB}, ${sideC} :>> `,
+  isThereTriangle(sideA, sideB, sideC)
+);
+
+console.log("Завдання 4");
+/**
+ * @function calculateSquareArea
+ * @param {number} side - Lenghtof the side of the square
+ * @returns {number} Square area
+ */
+function calculateSquareArea(side) {
+  return side * side;
+}
+
+const sideSquare = 20;
+console.log(
+  `Площа квадрата: 
+  V = ${sideSquare} * ${sideSquare} = ${calculateSquareArea(sideSquare)}`
 );
